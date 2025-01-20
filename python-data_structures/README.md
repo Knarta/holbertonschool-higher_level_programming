@@ -1,0 +1,1 @@
+Readme for the exercices Python - Data Structures:Lists, Tuples
