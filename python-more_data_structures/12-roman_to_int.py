@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
                 'C': 100, 'D': 500, 'M': 1000}
         for i in range(len(roman_string)):
             if i > 0 and dict[roman_string[i]] > dict[roman_string[i - 1]]:
-                res += dict[roman_string[i]] - 2 * dict[roman_string[i - 1]]
+                res += dict[roman_string[i]] - (2 * dict[roman_string[i - 1]])
             else:
                 res += dict[roman_string[i]]
         return res
