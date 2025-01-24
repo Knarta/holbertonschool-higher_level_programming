@@ -12,17 +12,18 @@ def text_indentation(text):
     lines after each of these characters: ., ? and :
     return: None
     """
-    if type(text) is not str:
+    if isinstance
         raise TypeError("text must be a string")
-    text = text.strip()
+
     i = 0
     res = ""
+    
     while i < len(text):
         res = text[i]
-        if text[i] in [".", "?", ":"]:
+        if text[i] == "." or text[i] == "?" or text[i] == ":":
             res += "\n\n"
             i += 1
-            while i < len(text) and text[i] == " ":
+            while i < len(text) and text[i] == ' ':
                 i += 1
             continue
         i += 1
