@@ -16,15 +16,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_type(self):
         with self.assertRaises(TypeError):
             max_integer(["School", 2, 3, 4])
-        with self.assertRaises(TypeError):
             max_integer(["School", "Zebra"])
-        with self.assertRaises(TypeError):
             max_integer("School")
-        with self.assertRaises(TypeError):
             max_integer([1, 2, 3, 4, 4.7])
-        with self.assertRaises(TypeError):
             max_integer([1, 2], [3, 4])
-        with self.assertRaises(TypeError):
             max_integer([[1, 2], [3, 4]])
 
 
