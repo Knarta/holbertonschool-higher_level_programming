@@ -12,12 +12,12 @@ def text_indentation(text):
     lines after each of these characters: ., ? and :
     return: None
     """
-    if isinstance (text, str) is False:
+    if isinstance(text, str) is False:
         raise TypeError("text must be a string")
 
     i = 0
     res = ""
-    
+
     while i < len(text):
         res += text[i]
         if text[i] == "." or text[i] == "?" or text[i] == ":":
