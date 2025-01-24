@@ -12,7 +12,7 @@ def text_indentation(text):
     lines after each of these characters: ., ? and :
     return: None
     """
-    if isinstance
+    if isinstance (text, str) is False:
         raise TypeError("text must be a string")
 
     i = 0
