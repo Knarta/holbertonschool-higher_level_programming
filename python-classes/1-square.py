@@ -7,5 +7,5 @@ class Square:
     __size = None
 
     def __init__(self, size=__size):
-        if size is None:
+        if size is not None:
             self.__size = size
