@@ -44,6 +44,7 @@ class Square:
         """ Method that prints a square """
         if self.__size == 0:
             print()
+            return
 
         for i in range(self.__position[1]):
             print()
