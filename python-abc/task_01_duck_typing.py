@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-from abc import ABC, abstractmethod 
+from abc import ABC, abstractmethod
 import math
+
 
 class Shape(ABC):
     """Define the abstract class Shape"""
@@ -12,6 +13,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
+
 
 class Circle(Shape):
     """Define the Circle class that inherits from Shape"""
@@ -24,7 +26,9 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius
 
+
 class Rectangle(Shape):
+    """Define the Rectangle class that inherits from Shape"""
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -34,6 +38,7 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return 2 * (self.width + self.height)
+
 
 def shape_info(shape):
     print(f"Area: {shape.area()}")
