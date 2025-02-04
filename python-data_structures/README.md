@@ -28,21 +28,154 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - The length of your files will be tested using wc
 
 ## Tasks 📋
-### 0. Squared simple 🔲
-- Write a function that computes the square value of all integers of a matrix:
-  - Prototype: `def square_matrix_simple(matrix=[]):`
-  - matrix is a 2 dimensional array
-  - Returns a new matrix:
-    - Same size as matrix
-    - Each value should be the square of the value of the input
-  - Initial matrix should not be modified
+### 0. Print a list of integers 🔢
+- Write a function that prints all integers of a list:
+  - Prototype: `def print_list_integer(my_list=[]):`
+  - Format: one integer per line. See example
   - You are not allowed to import any module
-  - You are allowed to use regular loops, map, etc.
+  - You can assume that the list only contains integers
+  - You are not allowed to cast integers into strings
+  - You have to use `str.format()` to print integers
 
 #### Example:
 ```python
 #!/usr/bin/python3
-square_matrix_simple = __import__('0-square_matrix_simple').square_matrix_simple
+print_list_integer = __import__('0-print_list_integer').print_list_integer
+
+my_list = [1, 2, 3, 4, 5]
+print_list_integer(my_list)
+# Output:
+# 1
+# 2
+# 3
+# 4
+# 5
+```
+
+### 1. Secure access to an element in a list 🔒
+- Write a function that retrieves an element from a list:
+  - Prototype: `def element_at(my_list, idx):`
+  - If idx is negative, the function should return None
+  - If idx is out of range (> of number of element in my_list), the function should return None
+  - You are not allowed to import any module
+  - You are not allowed to use try/except
+
+#### Example:
+```python
+#!/usr/bin/python3
+element_at = __import__('1-element_at').element_at
+
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+print("Element at index {:d} is {}".format(idx, element_at(my_list, idx)))
+# Output: Element at index 3 is 4
+```
+
+### 2. Replace element 🔄
+- Write a function that replaces an element of a list at a specific position:
+  - Prototype: `def replace_in_list(my_list, idx, element):`
+  - If idx is negative, the function should not modify anything, and returns the original list
+  - If idx is out of range (> of number of element in my_list), the function should not modify anything, and returns the original list
+  - You are not allowed to import any module
+  - You are not allowed to use try/except
+
+#### Example:
+```python
+#!/usr/bin/python3
+replace_in_list = __import__('2-replace_in_list').replace_in_list
+
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+new_element = 9
+new_list = replace_in_list(my_list, idx, new_element)
+
+print(new_list)
+# Output: [1, 2, 3, 9, 5]
+print(my_list)
+# Output: [1, 2, 3, 9, 5]
+```
+
+### 3. Print a list of integers... in reverse! 🔄
+- Write a function that prints all integers of a list, in reverse order:
+  - Prototype: `def print_reversed_list_integer(my_list=[]):`
+  - Format: one integer per line. See example
+  - You are not allowed to import any module
+  - You can assume that the list only contains integers
+  - You are not allowed to cast integers into strings
+  - You have to use `str.format()` to print integers
+
+#### Example:
+```python
+#!/usr/bin/python3
+print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
+
+my_list = [1, 2, 3, 4, 5]
+print_reversed_list_integer(my_list)
+# Output:
+# 5
+# 4
+# 3
+# 2
+# 1
+```
+
+### 4. Replace in a copy 🔄
+- Write a function that replaces an element in a list at a specific position without modifying the original list:
+  - Prototype: `def new_in_list(my_list, idx, element):`
+  - If idx is negative, the function should return a copy of the original list
+  - If idx is out of range (> of number of element in my_list), the function should return a copy of the original list
+  - You are not allowed to import any module
+  - You are not allowed to use try/except
+
+#### Example:
+```python
+#!/usr/bin/python3
+new_in_list = __import__('4-new_in_list').new_in_list
+
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+new_element = 9
+new_list = new_in_list(my_list, idx, new_element)
+
+print(new_list)
+# Output: [1, 2, 3, 9, 5]
+print(my_list)
+# Output: [1, 2, 3, 4, 5]
+```
+
+### 5. Can you C me now? 👀
+- Write a function that removes all characters c and C from a string:
+  - Prototype: `def no_c(my_string):`
+  - The function should return the new string
+  - You are not allowed to import any module
+  - You are not allowed to use `str.replace()`
+
+#### Example:
+```python
+#!/usr/bin/python3
+no_c = __import__('5-no_c').no_c
+
+print(no_c("Best School"))
+# Output: Best Shool
+print(no_c("Chicago"))
+# Output: hiago
+print(no_c("C is fun!"))
+# Output:  is fun!
+```
+
+### 6. Lists of lists = Matrix 🔲
+- Write a function that prints a matrix of integers:
+  - Prototype: `def print_matrix_integer(matrix=[[]]):`
+  - Format: see example
+  - You are not allowed to import any module
+  - You can assume that the list only contains integers
+  - You are not allowed to cast integers into strings
+  - You have to use `str.format()` to print integers
+
+#### Example:
+```python
+#!/usr/bin/python3
+print_matrix_integer = __import__('6-print_matrix_integer').print_matrix_integer
 
 matrix = [
     [1, 2, 3],
@@ -50,255 +183,146 @@ matrix = [
     [7, 8, 9]
 ]
 
-new_matrix = square_matrix_simple(matrix)
-print(new_matrix)
-# Output: [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
-print(matrix)
-# Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print_matrix_integer(matrix)
+# Output:
+# 1 2 3
+# 4 5 6
+# 7 8 9
+print("--")
+print_matrix_integer()
+# Output:
+#
 ```
 
-### 1. Search and replace 🔄
-- Write a function that replaces all occurrences of an element by another in a new list:
-  - Prototype: `def search_replace(my_list, search, replace):`
-  - my_list is the initial list
-  - search is the element to replace in the list
-  - replace is the new element
+### 7. Tuples addition ➕
+- Write a function that adds 2 tuples:
+  - Prototype: `def add_tuple(tuple_a=(), tuple_b=()):`
+  - Returns a tuple with 2 integers:
+    - The first element should be the addition of the first element of each argument
+    - The second element should be the addition of the second element of each argument
+  - You are not allowed to import any module
+  - You can assume that the two tuples will only contain integers
+  - If a tuple is smaller than 2, use the value 0 for each missing integer
+  - If a tuple is bigger than 2, use only the first 2 integers
+
+#### Example:
+```python
+#!/usr/bin/python3
+add_tuple = __import__('7-add_tuple').add_tuple
+
+tuple_a = (1, 89)
+tuple_b = (88, 11)
+new_tuple = add_tuple(tuple_a, tuple_b)
+print(new_tuple)
+# Output: (89, 100)
+
+print(add_tuple(tuple_a, (1, )))
+# Output: (2, 89)
+print(add_tuple(tuple_a, ()))
+# Output: (1, 89)
+```
+
+### 8. More returns! 🔄
+- Write a function that returns a tuple with the length of a string and its first character:
+  - Prototype: `def multiple_returns(sentence):`
+  - If the sentence is empty, the first character should be equal to None
   - You are not allowed to import any module
 
 #### Example:
 ```python
 #!/usr/bin/python3
-search_replace = __import__('1-search_replace').search_replace
+multiple_returns = __import__('8-multiple_returns').multiple_returns
 
-my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
-new_list = search_replace(my_list, 2, 89)
+sentence = "At school, I learnt C!"
+length, first = multiple_returns(sentence)
+print("Length: {:d} - First character: {}".format(length, first))
+# Output: Length: 22 - First character: A
+```
 
+### 9. Find the max 🔝
+- Write a function that finds the biggest integer of a list:
+  - Prototype: `def max_integer(my_list=[]):`
+  - If the list is empty, return None
+  - You can assume that the list only contains integers
+  - You are not allowed to import any module
+  - You are not allowed to use the builtin `max()`
+
+#### Example:
+```python
+#!/usr/bin/python3
+max_integer = __import__('9-max_integer').max_integer
+
+my_list = [1, 90, 2, 13, 34, 5, -13, 3]
+max_value = max_integer(my_list)
+print("Max: {}".format(max_value))
+# Output: Max: 90
+```
+
+### 10. Only by 2 ✌️
+- Write a function that finds all multiples of 2 in a list:
+  - Prototype: `def divisible_by_2(my_list=[]):`
+  - Return a new list with True or False, depending on whether the integer at the same position in the original list is a multiple of 2
+  - The new list should have the same size as the original list
+  - You are not allowed to import any module
+
+#### Example:
+```python
+#!/usr/bin/python3
+divisible_by_2 = __import__('10-divisible_by_2').divisible_by_2
+
+my_list = [0, 1, 2, 3, 4, 5, 6]
+list_result = divisible_by_2(my_list)
+
+i = 0
+while i < len(list_result):
+    print("{:d} {:s} divisible by 2".format(my_list[i], "is" if list_result[i] else "is not"))
+    i += 1
+# Output:
+# 0 is divisible by 2
+# 1 is not divisible by 2
+# 2 is divisible by 2
+# 3 is not divisible by 2
+# 4 is divisible by 2
+# 5 is not divisible by 2
+# 6 is divisible by 2
+```
+
+### 11. Delete at 🗑️
+- Write a function that deletes the item at a specific position in a list:
+  - Prototype: `def delete_at(my_list=[], idx=0):`
+  - If idx is negative or out of range, nothing change (returns the same list)
+  - You are not allowed to use `pop()`
+  - You are not allowed to import any module
+
+#### Example:
+```python
+#!/usr/bin/python3
+delete_at = __import__('11-delete_at').delete_at
+
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+new_list = delete_at(my_list, idx)
 print(new_list)
-# Output: [1, 89, 3, 4, 5, 4, 89, 1, 1, 4, 89]
+# Output: [1, 2, 3, 5]
 print(my_list)
-# Output: [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
+# Output: [1, 2, 3, 5]
 ```
 
-### 2. Unique addition ➕
-- Write a function that adds all unique integers in a list (only once for each integer):
-  - Prototype: `def uniq_add(my_list=[]):`
-  - You are not allowed to import any module
+### 12. Switch 🔄
+- Complete the source code in order to switch value of a and b:
+  - You can find the source code [here](https://github.com/holbertonschool/0x03.py/blob/master/12-switch.py)
+  - Your code should be inserted where the comment is (line 4)
+  - Your program should be exactly 5 lines long
 
 #### Example:
 ```python
-#!/usr/bin/python3
-uniq_add = __import__('2-uniq_add').uniq_add
-
-my_list = [1, 2, 3, 1, 4, 2, 5]
-result = uniq_add(my_list)
-print("Result: {:d}".format(result))
-# Output: Result: 15
+a = 89
+b = 10
+# ... your code here ...
+print("a={:d} - b={:d}".format(a, b))
+# Output: a=10 - b=89
 ```
 
-### 3. Present in both 🔄
-- Write a function that returns a set of common elements in two sets:
-  - Prototype: `def common_elements(set_1, set_2):`
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-common_elements = __import__('3-common_elements').common_elements
-
-set_1 = { "Python", "C", "Javascript" }
-set_2 = { "Bash", "C", "Ruby", "Perl" }
-c_set = common_elements(set_1, set_2)
-print(sorted(list(c_set)))
-# Output: ['C']
-```
-
-### 4. Only differents 🔄
-- Write a function that returns a set of all elements present in only one set:
-  - Prototype: `def only_diff_elements(set_1, set_2):`
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-only_diff_elements = __import__('4-only_diff_elements').only_diff_elements
-
-set_1 = { "Python", "C", "Javascript" }
-set_2 = { "Bash", "C", "Ruby", "Perl" }
-od_set = only_diff_elements(set_1, set_2)
-print(sorted(list(od_set)))
-# Output: ['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
-```
-
-### 5. Number of keys 🔢
-- Write a function that returns the number of keys in a dictionary:
-  - Prototype: `def number_keys(a_dictionary):`
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-number_keys = __import__('5-number_keys').number_keys
-
-a_dictionary = { 'language': "C", 'number': 13, 'track': "Low level" }
-nb_keys = number_keys(a_dictionary)
-print("Number of keys: {:d}".format(nb_keys))
-# Output: Number of keys: 3
-```
-
-### 6. Print sorted dictionary 📑
-- Write a function that prints a dictionary by ordered keys:
-  - Prototype: `def print_sorted_dictionary(a_dictionary):`
-  - You can assume that all keys are strings
-  - Keys should be sorted by alphabetic order
-  - Only sort keys of the first level (don’t sort keys of a dictionary inside the main dictionary)
-  - Dictionary values can have any type
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
-
-a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low level", 'ids': [1, 2, 3] }
-print_sorted_dictionary(a_dictionary)
-# Output:
-# Number: 89
-# ids: [1, 2, 3]
-# language: C
-# track: Low level
-```
-
-### 7. Update dictionary 🔄
-- Write a function that replaces or adds key/value in a dictionary:
-  - Prototype: `def update_dictionary(a_dictionary, key, value):`
-  - key argument will be always a string
-  - value argument will be any type
-  - If a key exists in the dictionary, the value will be replaced
-  - If a key doesn’t exist in the dictionary, it will be created
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-update_dictionary = __import__('7-update_dictionary').update_dictionary
-print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
-
-a_dictionary = { 'language': "C", 'number': 89, 'track': "Low level" }
-new_dict = update_dictionary(a_dictionary, 'language', "Python")
-print_sorted_dictionary(new_dict)
-# Output:
-# language: Python
-# number: 89
-# track: Low level
-
-print("--")
-print_sorted_dictionary(a_dictionary)
-# Output:
-# language: Python
-# number: 89
-# track: Low level
-
-print("--")
-print("--")
-
-new_dict = update_dictionary(a_dictionary, 'city', "San Francisco")
-print_sorted_dictionary(new_dict)
-# Output:
-# city: San Francisco
-# language: Python
-# number: 89
-# track: Low level
-
-print("--")
-print_sorted_dictionary(a_dictionary)
-# Output:
-# city: San Francisco
-# language: Python
-# number: 89
-# track: Low level
-```
-
-### 8. Simple delete by key 🗑️
-- Write a function that deletes a key in a dictionary:
-  - Prototype: `def simple_delete(a_dictionary, key=""):`
-  - key argument will be always a string
-  - If a key doesn’t exist, the dictionary won’t change
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-simple_delete = __import__('8-simple_delete').simple_delete
-print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
-
-a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low", 'ids': [1, 2, 3] }
-new_dict = simple_delete(a_dictionary, 'track')
-print_sorted_dictionary(a_dictionary)
-# Output:
-# Number: 89
-# ids: [1, 2, 3]
-# language: C
-
-print("--")
-print_sorted_dictionary(new_dict)
-# Output:
-# Number: 89
-# ids: [1, 2, 3]
-# language: C
-
-print("--")
-print("--")
-new_dict = simple_delete(a_dictionary, 'c_is_fun')
-print_sorted_dictionary(a_dictionary)
-# Output:
-# Number: 89
-# ids: [1, 2, 3]
-# language: C
-
-print("--")
-print_sorted_dictionary(new_dict)
-# Output:
-# Number: 89
-# ids: [1, 2, 3]
-# language: C
-```
-
-### 9. Multiply by 2 ✖️2
-- Write a function that returns a new dictionary with all values multiplied by 2:
-  - Prototype: `def multiply_by_2(a_dictionary):`
-  - You can assume that all values are only integers
-  - Returns a new dictionary
-  - You are not allowed to import any module
-
-#### Example:
-```python
-#!/usr/bin/python3
-multiply_by_2 = __import__('9-multiply_by_2').multiply_by_2
-print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
-
-a_dictionary = {'John': 12, 'Alex': 8, 'Bob': 14, 'Mike': 14, 'Molly': 16}
-new_dict = multiply_by_2(a_dictionary)
-print_sorted_dictionary(a_dictionary)
-# Output:
-# Alex: 8
-# Bob: 14
-# John: 12
-# Mike: 14
-# Molly: 16
-
-print("--")
-print_sorted_dictionary(new_dict)
-# Output:
-# Alex: 16
-# Bob: 28
-# John: 24
-# Mike: 28
-# Molly: 32
-```
-
-### 10. Best score 🏆
-- Write a function that returns a key with the biggest integer value:
-  - Prototype: `def best_score(a_dictionary):`
-  - You can assume that all values are only integers
-  - If no score found, return None
-  - You can assume all students have a different score
+## Repo 📂
+- GitHub repository: holbertonschool-higher_level_programming
+- Directory: python-data_structures
