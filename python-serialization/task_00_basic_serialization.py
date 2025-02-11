@@ -12,14 +12,12 @@ def serialize_and_save_to_file(data, filename):
     Serializes data to a JSON file
     """
     with open(filename, "w", encoding="utf-8") as file:
-        serialization = json.dumps(data)
-        file.write(serialization)
+        json.dump(data, file)
 
 
-def load_from_file_and_deserialize(filename):
+def load_and_deserialize(filename):
     """
     Deserializes data from a JSON file
     """
     with open(filename, "r", encoding="utf-8") as file:
-        data = json.loads(file.read())
-    return data
+        return json.load(file)
