@@ -29,10 +29,15 @@ class CustomObject:
         with open(filename, "wb") as file:
             pickle.dump(self, file)
 
-    @staticmethod
-    def deserialize(filename):
+    @classmethod
+    def deserialize(cls, filename):
         """
         Deserializes an object from a file
         """
-        with open(filename, "rb") as file:
-            return pickle.load(file)
+        try:
+            with open(filename, "rb") as file:
+                obj = pickle.load(file)
+            return obj
+        except FileNotFoundError:
+            print("File not found")
+            return None
