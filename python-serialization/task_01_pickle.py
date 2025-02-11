@@ -41,3 +41,9 @@ class CustomObject:
         except FileNotFoundError:
             print("File not found")
             return None
+        except EOFError:
+            print("End of file reached")
+            return None
+        except pickle.UnpicklingError:
+            print("Error unpickling the object")
+            return None
