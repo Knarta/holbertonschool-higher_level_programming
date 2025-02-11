@@ -4,7 +4,6 @@
 Module that defines a serialization/deserialization function
 """
 
-from os import path
 import json
 
 
