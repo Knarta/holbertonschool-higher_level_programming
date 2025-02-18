@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""Task 2: Fetch posts from the API and save them to a CSV file"""
+
 import requests
 import csv
 
@@ -14,7 +16,6 @@ status_code = response.status_code
 def fetch_and_print_posts():
     print(f"Status code: {status_code}")
     if response.status_code == 200:
-        # Loop through each post and print the title
         for post in response.json():
             print(post['title'])
 
