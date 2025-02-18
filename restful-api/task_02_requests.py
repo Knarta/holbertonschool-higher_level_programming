@@ -7,7 +7,7 @@ import csv
 
 """Fetch posts from the API"""
 
-response = requests.get("https://jsonplaceholder.typicode.com/posts")
+response = requests.get('https://jsonplaceholder.typicode.com/posts')
 status_code = response.status_code
 
 """Function to fetch and print posts"""
@@ -26,7 +26,7 @@ def fetch_and_print_posts():
 def fetch_and_save_posts():
     if status_code == 200:
         posts = response.json()
-        with open("posts.csv", "w", newline='') as file:
+        with open("posts.csv", mode="w", newline='') as file:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
