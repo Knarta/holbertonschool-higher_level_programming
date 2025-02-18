@@ -31,5 +31,5 @@ def fetch_and_save_posts():
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             for post in posts:
-                fieltered_post = {key: post[key] for key in fieldnames}
-                writer.writerow(fieltered_post)
+                filtered_post = {key: post[key] for key in fieldnames}
+                writer.writerow(filtered_post)
