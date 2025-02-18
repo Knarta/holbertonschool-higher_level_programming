@@ -3,15 +3,23 @@
 import requests
 import csv
 
+"""Fetch posts from the API"""
+
 response = requests.get("https://jsonplaceholder.typicode.com/posts")
 status_code = response.status_code
+
+"""Function to fetch and print posts"""
 
 
 def fetch_and_print_posts():
     print(f"Status code: {status_code}")
     if response.status_code == 200:
+        # Loop through each post and print the title
         for post in response.json():
             print(post['title'])
+
+
+"""Function to fetch and save posts to a CSV file"""
 
 
 def fetch_and_save_posts():
