@@ -15,18 +15,18 @@ status_code = response.status_code
 
 def fetch_and_print_posts():
     print(f"Status code: {status_code}")
-    if response.status_code == 200:
+    if status_code == 200:
         for post in response.json():
-            print(post['title'])
+            print(post["title"])
 
 
 """Function to fetch and save posts to a CSV file"""
 
 
 def fetch_and_save_posts():
-    if response.status_code == 200:
+    if status_code == 200:
         posts = response.json()
-        with open("posts.csv", "w") as file:
+        with open("posts.csv", "w", newline='') as file:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
