@@ -50,4 +50,3 @@ def run(server_class=HTTPServer, handler_class=RequestHandler, port=8000):
     httpd = server_class(server_address, handler_class)
     print(f"Server running at localhost:{port}")
     httpd.serve_forever()
-    
