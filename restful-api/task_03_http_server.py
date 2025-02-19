@@ -41,14 +41,26 @@ class RequestHandler(BaseHTTPRequestHandler):
                     "description": "A simple API built with http.server"
                 }
                 self.send_json(json_info)
+            elif self.path == '/info':
+                info = {
+                    "version": "1.0",
+                    "description": "A simple API built with http.server"}
+                self.send_json(info)
+                json_info = json.dumps(info)
+                self.send_json(json_info)
+                self.send.response(200)
+                self.send_header("Content-type", "application/json")
+                self.end_headers()
+                self.wfile.write(json_info.encode("utf-8"))
             else:
-                self.send_text("Endpoint not found", 404)
-        except Exception as e:
-            self.send_text(str(e), 500)
+                self.send_text("Not found", 404)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write("Not found".encode("utf-8"))
 
 
-def run(server_class=HTTPServer, handler_class=RequestHandler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print(f"Server running at localhost:{port}")
+if __name__ == '__main__':
+    server_address = ('', 8000)
+    httpd = HTTPServer(server_address, RequestHandler)
+    print("Starting server on port 8000...")
     httpd.serve_forever()
