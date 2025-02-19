@@ -14,7 +14,7 @@ statuscode = response.status_code
 
 
 def fetch_and_print_posts():
-    print(f"Status code: {statuscode}")
+    print(f"Status Code: {statuscode}")
     if statuscode == 200:
         for post in response.json():
             print(post["title"])
@@ -33,3 +33,8 @@ def fetch_and_save_posts():
             for post in posts:
                 filtered_post = {key: post[key] for key in fieldnames}
                 writer.writerow(filtered_post)
+
+
+if __name__ == '__main__':
+    fetch_and_print_posts()
+    fetch_and_save_posts()
