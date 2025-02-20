@@ -2,7 +2,8 @@
 
 """Task 4: Create a RESTful API with Flask"""
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+
 
 app = Flask(__name__)*
 users = {}
