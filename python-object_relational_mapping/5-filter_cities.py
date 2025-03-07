@@ -22,7 +22,8 @@ if __name__ == "__main__":
         LEFT JOIN states ON cities.state_id = states.id \
         WHERE states.name = %s ORDER BY cities.id ASC", (state_name,))
     row_result = cursor.fetchall()
-    for row in row_result:
-        print(row[0])
+    cities = [row[0]
+              for row in row_result]
+    print(", ".join(cities))
     cursor.close()
     db.close()
