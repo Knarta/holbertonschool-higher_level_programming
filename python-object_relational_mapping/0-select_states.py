@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """
+ This script connects to a MySQL database, retrieves all states sorted by ID in ascending order,
+ and prints the results to the console
 """
 
 import sys
