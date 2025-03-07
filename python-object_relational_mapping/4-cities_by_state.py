@@ -17,7 +17,7 @@ if __name__ == "__main__":
                          db=sys.argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name FROM cities \
-        LEFT JOIN states ON cities.state_id ORDER BY id ASC")
+        LEFT JOIN states ON cities.state_id = states.id ORDER BY id ASC")
     row_result = cursor.fetchall()
     for row in row_result:
         print(row)
