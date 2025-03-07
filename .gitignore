@@ -1,0 +1,8 @@
+main*
+__pycache__
+*.pyc
+*-main.py
+*.txt
+*.json
+*.csv
+*.xml
