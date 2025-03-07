@@ -8,7 +8,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    # Get MySQL username, password, and database name from command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -33,6 +32,4 @@ if __name__ == "__main__":
     # Print each City object with its associated State name
     for city, state in cities:
         print(f"{state.name}: ({city.id}) {city.name}")
-    
-    # Close the session
     session.close()

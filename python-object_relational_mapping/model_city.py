@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 """Module that defines the City class linking to the MySQL table 'cities'"""
