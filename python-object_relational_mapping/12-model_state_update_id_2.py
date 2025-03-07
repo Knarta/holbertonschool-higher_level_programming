@@ -3,7 +3,7 @@
 """Changes the name of a State object from the database hbtn_0e_6_usa"""
 
 import sys
-from model_state import State
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.name == state_name).first()
+    state = session.query(State).filter(State.id == state_id).first()
     if state:
         state.name = new_state_name
         session.commit()
