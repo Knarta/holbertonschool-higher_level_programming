@@ -6,7 +6,7 @@
 <body>
     {% include 'header.html' %}
     <h1>Items List</h1>
-    {% is list %}
+    {% if list %}
         <ul>
             {% for item in items %}
                 <li>{{ item}}</li>
