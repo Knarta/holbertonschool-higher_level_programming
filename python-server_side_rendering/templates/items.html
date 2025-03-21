@@ -8,12 +8,12 @@
     <h1>Items List</h1>
     {% if list %}
         <ul>
-            {% for item in items %}
-                <li>{{ item}}</li>
+            {% for item in list %}
+                <li>{{ item }}</li>
             {% endfor %}
         </ul>
     {% else %}
-        <p>No item found</p>
+        <p>No items found</p>
     {% endif %}
     {% include 'footer.html' %}
 </body>
